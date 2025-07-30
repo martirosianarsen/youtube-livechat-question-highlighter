@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Live Chat Highlighter",
+  "version": "1.0",
+  "description": "Automatically detect and highlight questions in YouTube Live Chat",
+  "permissions": [
+    "scripting",
+    "activeTab",
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://www.youtube.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle",
+      "all_frames": true
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "./icons/YT_LC_QH_16.png",
+      "32": "./icons/YT_LC_QH_32.png",
+      "48": "./icons/YT_LC_QH_48.png",
+      "128": "./icons/YT_LC_QH_128.png"
+    }
+  }
+}
