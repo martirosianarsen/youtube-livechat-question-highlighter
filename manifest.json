@@ -4,8 +4,6 @@
   "version": "1.0",
   "description": "Automatically detect and highlight questions in YouTube Live Chat",
   "permissions": [
-    "scripting",
-    "activeTab",
     "storage"
   ],
   "content_scripts": [
