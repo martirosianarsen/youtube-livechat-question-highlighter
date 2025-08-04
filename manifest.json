@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
-  "name": "YouTube Live Chat Highlighter",
-  "version": "1.0.1",
+  "name": "YouTube Live Chat Question Highlighter",
+  "version": "1.0.2",
   "description": "Automatically detect and highlight questions in YouTube Live Chat",
   "permissions": [
     "storage"
@@ -20,7 +20,7 @@
   ],
   "action": {
     "default_popup": "popup.html",
-    "default_title": "YouTube Chat Questions Highlighter"
+    "default_title": "YouTube Live Chat Question Highlighter"
   },
   "icons": {
     "16": "icons/YT_LC_QH_16.png",

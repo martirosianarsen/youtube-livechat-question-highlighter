@@ -22,7 +22,7 @@ function isQuestion(text) {
   const trimmed = text.trim()
   
   // Check for question marks (including Armenian)
-  if (/[?՞]/.test(trimmed)) return true
+  if (/[¿?՞؟？]/.test(trimmed)) return true
   
   // Check for common question words at the beginning
   const questionStarters = /^(what|how|why|when|where|who|which|can|could|would|should|will|do|does|did|is|are|was|were|have|has|had)\s+/i
