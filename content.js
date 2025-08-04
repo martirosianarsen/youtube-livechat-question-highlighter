@@ -52,9 +52,7 @@ function saveQuestion(text) {
       console.error('Error loading questions for save:', chrome.runtime.lastError)
       return
     }
-    
     const questions = result[storageKey]
-    
     // Check if question already exists (handle both string and object formats)
     const questionExists = questions.some(q => {
       const existingText = typeof q === 'string' ? q : q.text
