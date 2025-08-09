@@ -6,6 +6,7 @@
 - **Automatic Question Detection** – Instantly finds and highlights viewer questions.  
 - **Persistent Storage** – Saves detected questions in `localStorage` so they remain available during your live session.  
 - **Popup Menu Display** – View all stored questions in an easy-to-access popup interface.  
+- **Mark as Read** – Mark questions as read to keep track of which ones you’ve already answered.  
 - **Clear List Option** – Remove selected questions or clear the entire list with one click.  
 
 Enhance your **YouTube streaming experience**, improve **audience engagement**, and manage **Q&A sessions** more efficiently.
