@@ -4,6 +4,7 @@
 [![Users](https://img.shields.io/chrome-web-store/users/fkebfbgodophecikemcooilgpfafnmpi.svg)](https://chromewebstore.google.com/detail/fkebfbgodophecikemcooilgpfafnmpi?utm_source=item-share-cb)
 [![Rating](https://img.shields.io/chrome-web-store/rating/fkebfbgodophecikemcooilgpfafnmpi.svg)](https://chromewebstore.google.com/detail/fkebfbgodophecikemcooilgpfafnmpi?utm_source=item-share-cb)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+---
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/Z8Z41JH1LR)
 ---
 
