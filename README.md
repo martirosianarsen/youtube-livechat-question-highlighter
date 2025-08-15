@@ -42,11 +42,6 @@ Unlike other web highlighters, **Text Marker** is:
 
 ---
 
-## 📷 Screenshots
-> *(Add screenshots here to show highlights in action)*
-
----
-
 ## 📄 License
 This project is licensed under the **MIT License** – you are free to use, modify, and distribute it.
 
