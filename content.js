@@ -25,7 +25,7 @@ function isQuestion(text) {
   if (/[¿?՞؟？]/.test(trimmed)) return true
   
   // Check for common question words at the beginning
-  const questionStarters = /^(what|how|why|when|where|who|which|can|could|would|should|will|do|does|did|is|are|was|were|have|has|had)\s+/i
+  const questionStarters = /^(հարց|ինչու|ինչպես|որքան|вопрос|question|what|how|why|when|where|who|which|can|could|would|should|will|do|does|did|is|are|was|were|have|has|had)\s+/i
   if (questionStarters.test(trimmed)) return true
   
   return false
