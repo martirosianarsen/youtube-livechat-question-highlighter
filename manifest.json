@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "YouTube Live Chat Question Highlighter",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Automatically detect and highlight questions in YouTube Live Chat",
   "permissions": [
     "storage"
