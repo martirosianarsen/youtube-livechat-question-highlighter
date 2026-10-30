@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Live Chat Questions · Settings</title>
+    <link rel="stylesheet" href="settings.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <img src="icons/YT_LC_QH_48.png" width="42" height="42" alt="" />
+        <div>
+          <span>LIVE CHAT QUESTIONS</span>
+          <h1>Make it work your way.</h1>
+        </div>
+        <span class="version">Settings · 1.1</span>
+      </header>
+      <p class="intro">
+        One place for your question queue, detection rules, and appearance.
+        Changes apply to open chat tabs when you save.
+      </p>
+      <form id="form">
+        <div class="grid">
+          <section>
+            <h2><span>01</span> Question detection</h2>
+            <label class="toggle"
+              ><span
+                ><b>Capture questions</b
+                ><small
+                  >Pause detection without deleting your saved queue.</small
+                ></span
+              ><input id="enabled" type="checkbox" role="switch" /></label
+            ><label class="toggle"
+              ><span
+                ><b>Recognize question starters</b
+                ><small
+                  >Include messages starting with “how”, “what”, “ինչպես”, and
+                  similar words.</small
+                ></span
+              ><input
+                id="detectStarters"
+                type="checkbox"
+                role="switch" /></label
+            ><label class="toggle"
+              ><span
+                ><b>Include chat replays</b
+                ><small
+                  >Detect questions when watching a recorded stream.</small
+                ></span
+              ><input id="includeReplay" type="checkbox" role="switch" /></label
+            ><label class="field"
+              ><span>Additional question starters</span
+              ><textarea
+                id="keywords"
+                aria-label="Additional question starters"
+                rows="3"
+                maxlength="2000"
+                placeholder="quick question&#10;հարց ունեմ"
+              ></textarea
+              ><small
+                >One phrase per line. Matches the beginning of a message.
+                Standard question marks are always recognized.</small
+              ></label
+            >
+          </section>
+          <section>
+            <h2><span>02</span> Appearance</h2>
+            <label class="toggle"
+              ><span
+                ><b>Tabbed live chat</b
+                ><small
+                  >Separate Questions and Live chat tabs. Turn off to restore
+                  YouTube’s normal layout.</small
+                ></span
+              ><input id="embedded" type="checkbox" role="switch" /></label
+            ><label class="field"
+              ><span>Theme</span
+              ><select id="theme" aria-label="Theme">
+                <option value="system">Follow system</option>
+                <option value="light">Light</option>
+                <option value="dark">Dark</option>
+              </select></label
+            ><label class="toggle"
+              ><span
+                ><b>Highlight questions in chat</b
+                ><small
+                  >Turn off visual highlighting while keeping the queue
+                  active.</small
+                ></span
+              ><input id="highlight" type="checkbox" role="switch" /></label
+            ><label class="color-row"
+              ><span
+                ><b>Highlight accent</b
+                ><small
+                  >Answered questions use a separate green accent.</small
+                ></span
+              ><input
+                id="color"
+                type="color"
+                aria-label="Highlight accent color"
+            /></label>
+            <div class="sample" id="sample">
+              <b>Viewer question</b>
+              <p>How do I get started with this?</p>
+            </div>
+          </section>
+          <section class="retention">
+            <h2><span>03</span> Storage & limits</h2>
+            <div class="numbers">
+              <label class="field"
+                ><span>Maximum saved questions</span
+                ><input
+                  id="maxQuestions"
+                  aria-label="Maximum saved questions"
+                  type="number"
+                  min="0"
+                  max="10000"
+                  step="1"
+                  required
+                /><small
+                  >Default: 100. Use 0 for no fixed count limit; available
+                  Chrome storage still applies.</small
+                ></label
+              ><label class="field"
+                ><span>Maximum question length</span
+                ><input
+                  id="maxLength"
+                  aria-label="Maximum question length"
+                  type="number"
+                  min="100"
+                  max="10000"
+                  step="1"
+                  required
+                /><small
+                  >100–10,000 characters. Longer messages are skipped. Default:
+                  1,000.</small
+                ></label
+              >
+            </div>
+            <p class="warning">
+              A smaller queue limit removes the oldest saved questions when
+              applied. You will be asked to confirm if existing questions would
+              be removed.
+            </p>
+          </section>
+        </div>
+        <div class="save-bar">
+          <button id="reset" type="button">Restore defaults</button
+          ><span id="settingsStatus" role="status" aria-live="polite"></span
+          ><button id="save" type="submit">Save settings</button>
+        </div>
+      </form>
+      <footer>
+        Stored only on your device. No sign-in, tracking, or cloud service.
+      </footer>
+    </main>
+    <script src="shared.js"></script>
+    <script src="settings.js"></script>
+  </body>
+</html>

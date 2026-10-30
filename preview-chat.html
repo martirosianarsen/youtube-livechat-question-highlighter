@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Live chat tab preview</title>
+    <style>
+      body {
+        margin: 0;
+        background: #fff;
+        color: #303642;
+        font: 12px/1.7 system-ui;
+      }
+      yt-live-chat-app {
+        display: flex;
+        flex-direction: column;
+        padding: 14px;
+      }
+      header {
+        font-weight: 600;
+        padding-bottom: 12px;
+        border-bottom: 1px solid #e6e8ef;
+        margin-bottom: 12px;
+      }
+      header small {
+        display: block;
+        font-weight: 400;
+        color: #8a929e;
+        font-size: 9px;
+      }
+      .messages {
+        flex: 1;
+        overflow: auto;
+      }
+      .message {
+        padding: 8px 0;
+        font-size: 11px;
+      }
+      .message b {
+        margin-right: 7px;
+        font-size: 10px;
+      }
+      input {
+        padding: 10px;
+        border: 1px solid #e5e8ef;
+        border-radius: 8px;
+        background: #f9fafb;
+        font: 11px system-ui;
+        width: 100%;
+        margin-top: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <yt-live-chat-app
+      ><header>
+        Live chat
+        <small
+          >Sample messages · YouTube’s actual chat is preserved in the
+          extension</small
+        >
+      </header>
+      <div class="messages">
+        <div class="message"><b>Mari</b>Great explanation, thank you!</div>
+        <div class="message">
+          <b>David K.</b>What would you recommend for a beginner?
+        </div>
+        <div class="message"><b>Nick</b>Watching from Yerevan 👋</div>
+        <div class="message">
+          <b>Aram</b>How do you keep track of questions?
+        </div>
+      </div>
+      <input
+        aria-label="Sample chat composer"
+        placeholder="YouTube’s native message composer stays here"
+        disabled
+    /></yt-live-chat-app>
+    <script src="shared.js"></script>
+    <script src="preview.js"></script>
+    <script src="panel.js"></script>
+    <script>
+      let records = [],
+        settings = ChatQuestions.settingsFrom();
+      const panel = ChatQuestions.createPanel({
+        streamUrl: "https://www.youtube.com/watch?v=demo",
+        getSettings: () => settings,
+        getRecords: () => records,
+        onAction: async (action, extra) => {
+          const response = await chrome.runtime.sendMessage({
+            type: "questions:action",
+            action,
+            ...extra,
+          });
+          if (response.questions) records = response.questions;
+          if (response.settings) settings = response.settings;
+          return response;
+        },
+      });
+      chrome.runtime
+        .sendMessage({ type: "questions:action", action: "get" })
+        .then((response) => {
+          records = response.questions;
+          settings = response.settings;
+          panel.update();
+        });
+      chrome.storage.onChanged.addListener((changes) => {
+        if (changes[ChatQuestions.KEY])
+          records = changes[ChatQuestions.KEY].newValue;
+        if (changes[ChatQuestions.SETTINGS])
+          settings = changes[ChatQuestions.SETTINGS].newValue;
+        panel.update();
+      });
+    </script>
+  </body>
+</html>

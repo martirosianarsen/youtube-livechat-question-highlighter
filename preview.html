@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Live Chat Questions · New design</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        color: #262b35;
+        background: #f0f1f5;
+        font: 14px/1.7 system-ui;
+      }
+      nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 17px 5vw;
+        background: #fafbfd;
+        border-bottom: 1px solid #e1e4ec;
+      }
+      nav > span {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 650;
+      }
+      nav img {
+        width: 29px;
+        height: 29px;
+      }
+      small {
+        font-size: 10px;
+        color: #959aa6;
+      }
+      main {
+        max-width: 1130px;
+        margin: 52px auto;
+        display: grid;
+        grid-template-columns: 1fr 402px;
+        gap: 90px;
+        padding: 0 30px;
+      }
+      .intro {
+        padding-top: 20px;
+      }
+      .eyebrow {
+        font-size: 10px;
+        color: #ab7567;
+        letter-spacing: 2px;
+        font-weight: 600;
+      }
+      h1 {
+        font-size: 47px;
+        line-height: 1.13;
+        letter-spacing: -2px;
+        margin: 20px 0;
+        color: #252831;
+        font-weight: 600;
+      }
+      h1 span {
+        color: #d26451;
+      }
+      .intro > p {
+        color: #9196a3;
+        font-size: 13px;
+        line-height: 1.9;
+        max-width: 370px;
+      }
+      .chat {
+        margin-top: 30px;
+        max-width: 400px;
+        background: #fafbfd;
+        border: 1px solid #e0e3eb;
+        border-radius: 16px;
+        padding: 17px 18px;
+      }
+      .chat-head {
+        display: flex;
+        justify-content: space-between;
+        font-size: 11px;
+        font-weight: 600;
+        padding-bottom: 12px;
+        border-bottom: 1px solid #e8eaf0;
+        margin-bottom: 12px;
+      }
+      .chat-head span {
+        font-size: 9px;
+        color: #9a9eab;
+        font-weight: 400;
+      }
+      .message {
+        font-size: 11px;
+        padding: 8px 10px;
+        color: #78808f;
+        border-radius: 7px;
+        margin: 5px 0;
+      }
+      .message b {
+        color: #4e5360;
+        margin-right: 7px;
+        font-size: 10px;
+      }
+      .message.q {
+        background: #faeee8;
+        border-left: 3px solid #ec8a6f;
+      }
+      .tip {
+        font-size: 10px !important;
+        max-width: 390px;
+        margin-top: 18px !important;
+      }
+      .preview {
+        text-align: center;
+      }
+      iframe {
+        width: 402px;
+        height: 572px;
+        border: 1px solid #dde1e9;
+        border-radius: 17px;
+        box-shadow: 0 20px 60px #353a4a14;
+        background: #f9fafb;
+      }
+      .preview > p {
+        color: #989eaa;
+        font-size: 9px;
+        margin: 13px 0;
+      }
+      @media (max-width: 850px) {
+        main {
+          grid-template-columns: 1fr;
+          gap: 25px;
+          margin: 25px auto;
+        }
+        .intro {
+          padding-top: 0;
+        }
+        h1 {
+          font-size: 38px;
+        }
+        .preview {
+          max-width: 100%;
+        }
+        iframe {
+          max-width: 100%;
+        }
+      }
+      .chat-preview {
+        display: block;
+        width: 100%;
+        max-width: 400px;
+        height: 390px;
+        margin-top: 25px;
+        border: 1px solid #e0e3eb;
+        border-radius: 14px;
+        box-shadow: none;
+      }
+      main {
+        margin: 28px auto;
+        gap: 65px;
+      }
+      .intro {
+        padding-top: 0;
+      }
+      .intro h1 {
+        font-size: 34px;
+        margin: 12px 0 16px;
+      }
+      .intro > p {
+        font-size: 12px;
+        line-height: 1.7;
+      }
+      .chat-preview {
+        height: 350px;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <span
+        ><img src="icons/YT_LC_QH_48.png" alt="" />Live Chat Questions
+        <small>/ design preview</small></span
+      ><small>Version 1.1 · Sample questions only</small>
+    </nav>
+    <main>
+      <section class="intro">
+        <div class="eyebrow">MAKE ROOM FOR THE GOOD QUESTIONS</div>
+        <h1>Every question.<br /><span>A chance to connect.</span></h1>
+        <p>
+          A focused queue for your live Q&A. Find the questions, keep the
+          conversation moving, and give every answer a little more attention.
+        </p>
+        <iframe
+          class="chat-preview"
+          src="preview-chat.html"
+          title="Tabbed YouTube chat preview"
+        ></iframe>
+        <p class="tip">
+          Try the panel: search by question or viewer, mark an answer, copy a
+          question, or open Settings. Try Questions and Live chat in the
+          embedded panel. This demo uses separate sample storage.
+        </p>
+      </section>
+      <section class="preview">
+        <iframe
+          src="preview-popup.html"
+          title="Question queue preview"
+        ></iframe>
+        <p>
+          Interactive preview · your installed extension data stays untouched
+        </p>
+      </section>
+    </main>
+  </body>
+</html>
