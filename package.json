@@ -1,0 +1,13 @@
+{
+  "name": "youtube-livechat-question-highlighter",
+  "version": "1.1.0",
+  "private": true,
+  "description": "A focused question queue for YouTube live chat",
+  "scripts": {
+    "test": "playwright test",
+    "package": "python3 scripts/package.py"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.64.1"
+  }
+}

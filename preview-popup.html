@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Live Chat Questions</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header>
+      <div class="brand">
+        <img src="icons/YT_LC_QH_48.png" width="36" height="36" alt="" />
+        <div>
+          <h1>Live Chat Questions</h1>
+          <p>Less noise. Better conversations.</p>
+        </div>
+      </div>
+      <button
+        id="settings"
+        class="icon"
+        aria-label="Open settings"
+        title="Settings"
+      >
+        <svg viewBox="0 0 24 24"><path d="M4 7h16M4 17h16M8 4v6m8 4v6" /></svg>
+      </button>
+    </header>
+    <main>
+      <div class="queue-heading">
+        <div>
+          <span class="eyebrow"><i></i> YOUR QUESTION QUEUE</span>
+          <h2>Questions worth answering.</h2>
+        </div>
+        <span class="queue-count" id="pendingCount">0</span>
+      </div>
+      <div class="tabs" role="tablist" aria-label="Question filter">
+        <button id="unread" role="tab" aria-selected="true">
+          Unanswered <span id="unreadCount">0</span></button
+        ><button id="answered" role="tab" aria-selected="false">
+          Answered <span id="answeredCount">0</span></button
+        ><button id="all" role="tab" aria-selected="false">All</button>
+      </div>
+      <label class="search"
+        ><svg viewBox="0 0 24 24">
+          <circle cx="10" cy="10" r="6.5" />
+          <path d="m15 15 5 5" /></svg
+        ><input
+          type="search"
+          id="search"
+          placeholder="Find a question or viewer…"
+          aria-label="Search questions"
+      /></label>
+      <div class="list-heading">
+        <span id="listLabel">WAITING FOR AN ANSWER</span
+        ><button id="clear" class="text-button">Clear queue</button>
+      </div>
+      <p id="status" role="status" hidden></p>
+      <section
+        id="questions"
+        role="tabpanel"
+        aria-labelledby="unread"
+        aria-live="polite"
+      ></section>
+      <div id="confirmation" hidden>
+        <p>Clear all saved questions? This cannot be undone.</p>
+        <div>
+          <button id="cancel">Keep questions</button
+          ><button id="confirm">Clear all questions</button>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <span
+        ><svg viewBox="0 0 24 24">
+          <rect x="6" y="10" width="12" height="11" rx="2" />
+          <path d="M9 10V7a3 3 0 0 1 6 0v3" /></svg
+        ><span id="limitLabel">Saved on this device · latest 100</span></span
+      ><span>Made for your live Q&A</span>
+    </footer>
+    <script src="shared.js"></script>
+    <script src="preview.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>
